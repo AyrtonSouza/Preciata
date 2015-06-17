@@ -1,0 +1,58 @@
+<ui:composition template="/WEB-INF/template/layoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:define name="Lista de vendas"></ui:define>
+	
+	<ui:define name="corpo">
+		 <h:form>
+            <!-- Lista de Vendas -->
+            <p:panel header="Lista de Vendas">
+                <p:dataTable value="" var="venda"
+                             rows="10" paginator="true" paginatorAlwaysVisible="false">
+
+                    <p:column headerText="ID">
+                        <h:outputText value="#{vendaBean.venda.pedidoId}"></h:outputText>
+                    </p:column>
+
+                    <p:column headerText="status">
+                        <h:outputText value="#{vendaBean.venda.pedidoStatus}"></h:outputText>
+                    </p:column>
+
+                    <p:column headerText="Valor">
+                        <h:outputText value=""></h:outputText>
+                    </p:column>
+
+                    <p:column headerText="cliente">
+                        <h:outputText value=""></h:outputText>
+                    </p:column>
+
+                    <p:column headerText="Acao">
+                        <p:commandButton icon="ui-icon-trash" title="Excluir venda"
+                                         oncomplete="confirmacao.show()">
+						<f:setPropertyActionListener value="#{venda}"
+                                                                             target="#{vendaBean.venda}" />
+                        </p:commandButton>
+                    </p:column>
+
+                </p:dataTable>
+
+                <p:confirmDialog widgetVar="confirmacao"
+                                 message="Deseja excluir venda?" severity="alert" closable="true">
+                    <p:commandButton value="Sim" actionListener="#{produtoBean.excluir()}"
+                                     onclick="confirmacao.hide()" update="@form" process="@this"></p:commandButton>
+                    <p:commandButton value="Nao" onclick="confirmacao.hide()"></p:commandButton>
+                </p:confirmDialog>
+                <br/>
+                <p:commandButton 
+                    value="Voltar" title="Voltar"
+                    action="principal.faces" update="@form">
+                </p:commandButton>
+            </p:panel>
+        </h:form>
+	</ui:define>
+	
+</ui:composition>

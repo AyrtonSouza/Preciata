@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+    </h:head>
+
+    <h:body onload="document.content.dialog.login.username.focus();">
+        <div id="content" title="Login">
+            <p:dialog header="Login" id="dialog" minWidth="400"
+                      width="400" modal="true" closable="false" position="center"
+                      showEffect="slide" draggable="true" resizable="false" visible="true">
+                <form name='login' action="j_spring_security_check" method="post">
+                    <p:panelGrid columns="2">
+                        <h:outputLabel for="username" value="Username: " />
+                        <p:inputText id="username" required="true"></p:inputText>
+
+                        <h:outputLabel for="password" value="Password" />
+                        <p:password id="password"  required="true" />
+
+                        <f:facet name="footer">
+                            <p:row>
+                                <p:outputPanel style="width: 100%; text-align:center"
+                                               layout="block">
+                                    <input name="submit" type="submit" value="Login"/>
+                                </p:outputPanel>
+                            </p:row>
+                        </f:facet>
+                    </p:panelGrid>
+                </form>
+            </p:dialog>
+        </div>
+    </h:body>
+</html>

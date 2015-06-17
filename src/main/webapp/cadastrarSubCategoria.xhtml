@@ -1,0 +1,85 @@
+<ui:composition template="/WEB-INF/template/layoutPadrao.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    
+
+    <ui:define name="corpo">
+        <h:form>
+            <p:panel header="Cadastro de Produtos">
+
+                <p:messages>
+                </p:messages>
+
+                <p:panelGrid columns="2">
+
+                    <p:outputLabel value="Nome:" for="nome" />
+                    <p:inputText id="nome" value="#{categoriaBean.subcategoria.subNome}" required="true" />
+
+                    <p:outputLabel value="Categoria:" for="categoria" />
+                    <p:selectOneMenu id="categoria" value="#{categoriaBean.subcategoria.fkCatId}" required="true">
+
+                        <f:selectItems value="#{categoriaBean.categorias}" var="cats"
+                                       itemLabel="#{cats.catNome}" itemValue="#{cats.catId}" />
+                    </p:selectOneMenu>
+
+                </p:panelGrid>
+                <br />
+                <p:commandButton 
+                    value="Salvar" title="Salvar produto"
+                    action="#{categoriaBean.salvarSub()}" update="@form">
+                </p:commandButton>
+
+                <p:commandButton 
+                    value="Voltar" title="Voltar"
+                    action="#{subCatBean.salvar()}" update="@form">
+                </p:commandButton>
+            </p:panel>
+
+            <!-- Lista de Sub Categorias -->
+            <p:panel header="Lista de Sub Categorias">
+               
+                    <p:dataTable value="${categoriaBean.subcategorias}" var="subCat"
+                                 rows="10" paginator="true" paginatorAlwaysVisible="false">
+
+                        <p:column headerText="ID">
+                            <h:outputText value="${subCat.subId}"></h:outputText>
+                        </p:column>
+
+                        <p:column headerText="Nome">
+                            <h:outputText value="${subCat.subNome}"></h:outputText>
+                        </p:column>
+                       
+
+                        <p:column headerText="Acao">
+                            <p:commandButton icon="ui-icon-pencil" title="Editar Sub Categoria"
+                                             update="@form">
+                                <f:setPropertyActionListener value="#{subcat}"
+                                                             target="#{subCatBean.subcat}" />
+                            </p:commandButton>
+                            
+                            <p:commandButton icon="ui-icon-trash" title="Excluir Sub Categoria"
+                                             oncomplete="confirmacao.show()">
+                                <f:setPropertyActionListener value="#{subCat}"
+                                                             target="#{subCatBean.subcat}" />
+                            </p:commandButton>
+                        </p:column>
+
+                    </p:dataTable>
+               
+                <p:confirmDialog widgetVar="confirmacao"
+                                 message="Deseja excluir sub categoria?" severity="alert" closable="true">
+                    <p:commandButton value="Sim" actionListener="#{subcatBean.excluir}"
+                                     onclick="confirmacao.hide()" update="@form" process="@this"></p:commandButton>
+                    <p:commandButton value="Nao" onclick="confirmacao.hide()"></p:commandButton>
+                </p:confirmDialog>
+
+            </p:panel>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>LV Systems</title>
+</h:head>
+<h:body>
+	<ui:insert name="menu">
+		
+			<p:growl id="messages" />
+			<p:menubar>
+				<p:submenu label="Cadastros">
+					<p:menuitem value="Clientes" url="/cadastros/frmclientes.faces" />
+					<p:menuitem value="Funcionarios"
+						url="/cadastros/frmfuncionario.faces" />
+					<p:menuitem value="Tipo de funcionarios"
+						url="/cadastros/frmtipofuncionario.faces" />
+					<p:menuitem value="Departamentos"
+						url="/cadastros/frmdepartamento.faces" />
+					<p:menuitem value="Empresas" url="/cadastros/frmempresa.faces" />
+					<p:menuitem value="Produtos" url="/cadastros/frmprodutos.faces" />
+					<p:separator />
+					<p:menuitem value="Exit" url="#" />
+				</p:submenu>
+
+				<p:submenu label="Venda">
+					<p:menuitem value="Pre-venda" url="#" />
+					<p:menuitem value="Redo" url="#" />
+				</p:submenu>
+
+				<p:submenu label="Relatorios">
+					<p:menuitem value="Vendas" url="#" />
+					<p:submenu label="Cadastros">
+						<p:submenu label="Produtos">
+							<p:menuitem value="por tipo" url="#" />
+						</p:submenu>
+						<p:menuitem value="Cliente" url="#" />
+					</p:submenu>
+				</p:submenu>
+
+				<p:submenu label="Sistema">
+					<p:submenu label="Propriedades">
+						<p:menuitem value="Save" actionListener="#{menuView.save}"
+							update="messages" />
+						<p:menuitem value="Permissões" actionListener="#{menuView.update}"
+							update="messages" />
+					</p:submenu>
+					<p:submenu label="Usuarios">
+						<p:menuitem value="Cadastro" actionListener="#{menuView.delete}"
+							update="messages" ajax="false" />
+					</p:submenu>
+				</p:submenu>
+
+				<f:facet name="options">
+					<p:inputText style="margin-right:10px" placeholder="Search" />
+					<p:commandButton type="button" value="Logout"
+						icon="ui-icon-extlink" />
+				</f:facet>
+			</p:menubar>
+		
+	</ui:insert>
+	<p:messages id="mensagens" />
+	<p:dialog widgetVar="statusDialog" modal="true" draggable="false"
+		closable="false" resizable="false" showHeader="false">
+		<p:graphicImage value="/imagens/carregando.gif" width="100" />
+	</p:dialog>
+	<p:ajaxStatus onstart="PF('statusDialog').show()"
+		onsuccess="PF('statusDialog').hide()" />
+	<ui:insert name="corpo" />
+</h:body>
+</html>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition template="/WEB-INF/template/layoutPadrao.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="corpo" >
+        <h:form> 
+            <!-- Lista de Produtos -->
+            <p:messages>
+            </p:messages>
+
+            <p:panel header="Lista de Produtos">
+                <p:dataTable value="#{produtoBean.produtoList}" var="produto"
+                             rows="10" paginator="true" paginatorAlwaysVisible="false">
+
+                    <p:column headerText="ID">
+                        <h:outputText value="#{produto.prodId}"></h:outputText>
+                    </p:column>
+
+                    <p:column headerText="Nome">
+                        <h:outputText value="#{produto.prodNome}"></h:outputText>
+                    </p:column>
+
+                    <p:column headerText="Valor">
+                        <h:outputText value="#{produto.prodPreco}"></h:outputText>
+                    </p:column>
+
+                    <p:column headerText="Quantidade">
+                        <h:outputText value="#{produto.prodQuantidade}"></h:outputText>
+                    </p:column>
+
+                    <p:column headerText="Descricao">
+                        <h:outputText value="#{produto.prodDescricao}"></h:outputText>
+                    </p:column>
+
+                    <p:column headerText="Categoria">
+                        <h:outputText value="#{produto.fkCatId}"></h:outputText>
+                    </p:column>
+
+                    <p:column headerText="Sub Categoria">
+                        <h:outputText value="#{produto.fkCatId}"></h:outputText>
+                    </p:column>
+
+                    <p:column headerText="Acao">
+                        <p:commandButton icon="ui-icon-pencil" title="Editar produto"
+                                         update="@form">
+                            <f:setPropertyActionListener value="#{produto}"
+                                                         target="#{produtoBean.produto}" />
+                        </p:commandButton>
+                        |
+                        <p:commandButton icon="ui-icon-trash" title="Excluir produto"
+                                         oncomplete="confirmacao.show()">
+                            <f:setPropertyActionListener value="#{produto}"
+                                                         target="#{produtoBean.produto}" />
+                        </p:commandButton>
+                    </p:column>
+
+                </p:dataTable>
+
+                <p:confirmDialog widgetVar="confirmacao"
+                                 message="Deseja excluir o produto?" severity="alert" closable="true">
+                    <p:commandButton value="Sim" actionListener="#{produtoBean.excluir}"
+                                     onclick="confirmacao.hide()" update="@form" process="@this"></p:commandButton>
+                    <p:commandButton value="Nao" onclick="confirmacao.hide()"></p:commandButton>
+                </p:confirmDialog>
+
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>

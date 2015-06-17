@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition template="/WEB-INF/template/layoutPadrao.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="corpo">
+        <h:form enctype="multipart/form-data">
+            <p:messages>
+            </p:messages>
+            <p:panel header="Cadastro de Imagens" >
+                <p:fileUpload fileUploadListener="#{produtoBean.fileUpload}"
+                              mode="advanced" dragDropSupport="false" multiple="true"
+                              update="messages" sizeLimit="10000000" allowTypes="/(\.|\/)(jpg)$/"
+                              invalidFileMessage="Formato de arquivo invalido por favor envie um arquivo com o formato jpg"
+                              invalidSizeMessage="Arquivo com tamanho invalido por favor diminua"
+                              uploadLabel="Enviar Documento" cancelLabel="Cancelar Envio"
+                              label="Procurar Documentos" />
+            </p:panel>
+
+            <p:growl id="messages" showDetail="true" />
+        </h:form>
+    </ui:define>
+</ui:composition>

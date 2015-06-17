@@ -1,0 +1,72 @@
+<ui:composition template="/WEB-INF/template/layoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:define name="Cadastro de Usuario"></ui:define>
+	
+	<ui:define name="corpo">
+		 <h:form>
+            <p:panel header="Cadastro de Usuario">
+
+                <p:messages>
+                </p:messages>
+
+                <p:panelGrid columns="8">
+
+                    <p:outputLabel value="Nome:" for="nome" />
+                    <p:inputText id="nome" value="#{usuarioBean.usuario.usuNome}" required="true" />
+
+                    <p:outputLabel value="Email:" for="email"/>
+                    <p:inputText id="email" value="#{usuarioBean.usuario.usuEmail}" required="true" />
+
+                    <p:outputLabel value="CPF:" for="cpf"></p:outputLabel>
+                    <p:inputMask id="cpf" value="#{usuarioBean.usuario.usuCpf}" 
+                                 mask="999.999.999-99" required="true" maxlength="11"  />
+
+                    <p:outputLabel value="Cidade" for="cidade" />
+                    <p:inputText  id="cidade" value="#{usuarioBean.usuario.usuCidade}" required="true" />
+
+                    <p:outputLabel value="Estado" for="estado" />
+                    <p:inputText id="estado" value="#{usuarioBean.usuario.usuEstado}" required="true" />
+                    
+                    <p:outputLabel value="Telefone" for="telefone" />
+                    <p:inputMask id="telefone" value="#{usuarioBean.usuario.usuTelefone}"
+                                 mask="(99)9999-9999" required="true" />
+                    
+                    <p:outputLabel value="Celular" for="celular" />
+                    <p:inputMask id="celular" value="#{usuarioBean.usuario.usuCelular}"
+                                 mask="(99)9999-9999" required="true" />
+                    
+                    <p:outputLabel value="Logradouro" for="logradouro"/>
+                    <p:inputText id="logradouro" value="#{usuarioBean.usuario.usuLogradouro}" required="true" />
+                    
+                    <p:outputLabel value="Numero" for="numero"/>
+                    <p:inputText id="numero" value="#{usuarioBean.usuario.usunmLogradouro}" required="true" />
+                    
+                    <p:outputLabel value="Senha" for="senha"/>
+                    <p:password id="senha" value="#{usuarioBean.usuario.usuSenha}" required="true"
+                                feedback="true" weakLabel="fraca" goodLabel="Boa" strongLabel="Forte"
+                                promptLabel="Informe uma senha" match="confirmar"/>
+                    
+                    <p:outputLabel value="Confirmar Senha" for="confirmar"/>
+                    <p:password id="confirmar" value="#{usuarioBean.usuario.usuStatus}" required="true" />
+                    
+<!--                    <p:outputLabel value="Status"></p:outputLabel>
+                    <h:inputHidden value="{usuarioBean.usuario.usuStatus}" />-->
+                </p:panelGrid>
+                <br />
+                <p:commandButton value="Salvar" title="Salvar usuario"
+                                 icon="ui-icon-disk" action="#{usuarioBean.salvarFunci()}" update="@form" />
+                                 
+                <p:commandButton value="Voltar" title="Voltar"
+                                 icon="ui-icon-arrowreturnthick-1-w" action="#{usuarioBean.salvar}" update="@form" />                 
+            </p:panel>
+            
+         
+        </h:form>
+	</ui:define>
+	
+</ui:composition>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><ui:insert name="titulo">Preciata</ui:insert></title>
+        <h:outputStylesheet library="css" name="sistema.css" />
+    </h:head>
+    <h:body>
+
+        <p:ajaxStatus styleClass="ajax-status">
+            <f:facet name="start">
+                <h:graphicImage library="img" name="carregando.png"/>		
+            </f:facet>
+            <f:facet name="complete">
+                <h:outputText value=""/>
+            </f:facet>
+        </p:ajaxStatus>
+
+        <header>
+            <div>
+                <h:link>
+                    <h:graphicImage library="img" name="logopreciata.png" height="100" width="300" />
+                </h:link>
+            </div>
+        </header>
+        <h:form>
+            <p:growl id="messages" />
+            <p:menubar>
+                <p:submenu label="Cadastros">
+                    <p:menuitem value="Produto" url="cadastrarProduto.faces" />
+                    <p:menuitem value="Funcionarios"
+                                url="cadastrarFuncionario.faces" />
+                    <p:menuitem value="Categoria"
+                                url="/cadastrarCategoria.faces" />
+                    <p:menuitem value="SubCategoria" url="cadastrarSubCategoria.faces" />
+                    
+                </p:submenu>
+
+                <p:submenu label="Listar">
+                    <p:menuitem value="Produto" url="listarProduto.faces" />
+                    <p:menuitem value="Funcionarios" url="listarFuncionario.faces" />
+                </p:submenu>
+
+                <p:submenu label="Relatorios">
+                    <p:menuitem value="Vendas" url="vendas.faces" />
+                    <p:submenu label="Cadastros">
+                        <p:submenu label="Produtos">
+                            <p:menuitem value="por tipo" url="#" />
+                        </p:submenu>
+                        <p:menuitem value="Cliente" url="#" />
+                    </p:submenu>
+                </p:submenu>
+
+                <p:submenu label="Sistema">
+                    <p:submenu label="Propriedades">
+                        <p:menuitem value="Save" actionListener="#{menuView.save}"
+                                    update="messages" />
+                        <p:menuitem value="Permissões" actionListener="#{menuView.update}"
+                                    update="messages" />
+                    </p:submenu>
+                    <p:submenu label="Usuarios">
+                        <p:menuitem value="Cadastro" actionListener="#{menuView.delete}"
+                                    update="messages" ajax="false" />
+                    </p:submenu>
+                </p:submenu>
+
+                <f:facet name="options">
+                    <p:inputText style="margin-right:10px" placeholder="Search" />
+                    <p:commandButton type="button" value="Logout"
+                                     icon="ui-icon-extlink" />
+                </f:facet>
+            </p:menubar>
+        </h:form>
+
+
+        <div>
+            <ui:insert name="corpo"/>
+        </div>
+        <p:separator style="margin-top: 20px"/>
+
+        <footer>
+            <h5 align="left">V:1.0</h5>
+            <h4 align="center">Desenvolvido por <a href="http://institutonb.com.br" target="_blak">INB</a></h4>
+        </footer>
+
+    </h:body>
+
+</html>

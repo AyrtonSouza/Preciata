@@ -1,0 +1,683 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<title>Web Shop</title>
+
+<!-- Main style -->
+<link rel="stylesheet" href="../css/main.css" type="text/css" />
+
+<!-- Brown skin style -->
+<link rel="stylesheet" href="../css/brown1.css" type="text/css" />
+
+<!-- Fancybox style -->
+<link rel="stylesheet" href="../fancybox/fancybox/jquery.fancybox-1.3.4.html" type="text/css" media="screen" />
+
+<!-- Promo slider style -->
+<link rel="stylesheet" href="../css/megamenu.html" type="text/css" />
+
+<!-- Flexislider CSS -->
+<link rel="stylesheet" href="../flexi/flexslider.css" type="text/css" media="screen" />
+
+<!-- Media Queries -->
+<link href="../css/media-queries.css" rel="stylesheet" type="text/css"/>
+
+<!-- Google font -->
+<link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'/>
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'/>
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'/>
+
+<!-- JS for jQuery -->
+<script src="../../../ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!--<script>window.jQuery || document.write('<script src="../js/jquery-1.7.1.min.js"><\/script>');</script>-->
+
+<!-- JS for superfish navigation menu -->
+<script type="text/javascript" src="../js/hoverIntent.js"></script> 
+<script type="text/javascript" src="../js/superfish.js"></script> 
+
+<!-- FlexSlider Main Promo Slider -->
+<script src="../flexi/jquery.flexslider.js"></script>
+
+<!-- Optional FlexSlider Additions -->
+<script src="../flexi/js/jquery.easing.html"></script>
+<script src="../flexi/js/jquery.mousewheel.html"></script>
+
+<!-- JS for jQuery Image Hover Effect -->
+<script type="text/javascript" src="../js/mosaic.1.0.1.js"></script>
+
+<!-- JS for jQuery Hot Products Slider -->
+<script type="text/javascript" src="../js/jquery.carouFredSel-6.0.2.js"></script>
+
+<!-- JS for jQuery Navigation Transform -->
+<script src="../js/jquery.mobilemenu.js"></script>
+
+</head>
+<body>
+
+<div id="container">
+	<div id="content">
+		
+		<div id="header">
+			
+			<div class="store-logo">
+				<img src="../images/brown/logomarcaOFICIALALTEADO2.png"/>
+			</div>
+			
+			<!-- Search Begin -->
+			<!--<div class="search-container">
+				<form action="#" method="get">
+					<input type="text" name="s" class="search-field" onblur="if(this.value==''){this.value='I am looking for...'};" onfocus="if(this.value=='I am looking for...'){this.value=''};" value="I am looking for...">
+					<input type="submit" class="search-btn" value="" id="s_submit">
+				</form>
+			</div>-->
+			<!-- Search End -->
+			
+			<div class="login-block">
+				<span class="icon-cart"><a href="#" class="cart regular">(0) Itens</a></span>
+				<span class="icon-account"><a href="#" class="account regular">Perfil</a></span>
+			</div>
+		</div>
+		
+		<!-- Navigation Begin -->
+		<div class="navigation-outer">
+			<div class="navigation">
+				
+				<!-- Navigation End Begin -->
+			<ul class="sf-menu" id="main-menu">
+				<li class="nav-item"><a href="#">Home</a>
+					<!--<ul>
+						<li class="sfish-navgiation-item">
+							<a href="index.html"><img src="../images/slide_small1.jpg" class="menu-image-item" />Homepage Layout 1</a>
+						</li>
+						<li class="sfish-navgiation-item">
+							<a href="index2.html"><img src="../images/pr1_small.png" class="menu-image-product" />Homepage Layout 2</a>
+						</li>
+						<li class="sfish-navgiation-item">
+							<a href="index3.html"><img src="../images/menu_thumbnail3.png" class="menu-image-item" />Homepage Layout 3</a>
+						</li>
+						<li class="sfish-navgiation-item">
+							<a href="index4.html"><img src="../images/quote_image.jpg" class="menu-image-product" />Homepage Layout 4</a>
+						</li>
+					</ul>-->
+				</li>
+				<li class="nav-item"><a href="#">Institucional</a>
+					<!--<ul>
+						<li class="sfish-navgiation-item">
+							<a href="grid.html">Product Listing as Grid</a>
+						</li>
+						<li class="sfish-navgiation-item">
+							<a href="list.html">Product Listing as List</a>
+						</li>
+						<li class="sfish-navgiation-item">
+							<a href="list_full.html">Product Listing Full Width</a>
+						</li>
+						<li class="sfish-navgiation-item">
+							<a href="details.html">Product Details, Exposure Product Gallery</a>
+						</li>
+						<li class="sfish-navgiation-item">
+							<a href="details_lightbox.html">Product Details, Lightbox Product Gallery</a>
+						</li>
+						<li class="sfish-navgiation-item">
+							<a href="cart.html">Shopping Cart</a>
+						</li>
+						<li class="sfish-navgiation-item last">
+							<a href="brands.html">Brands List</a>
+						</li>
+					</ul>-->	
+				</li>
+				<li class="nav-item"><a href="#">Produtos</a></li>
+				<li class="nav-item"><a href="#">Ajuda</a>
+					<!--<ul>
+						<li class="sfish-navgiation-item">
+							<a href="shortcodes_buttons.html">Buttons and Links</a>
+						</li>
+						<li class="sfish-navgiation-item">
+							<a href="shortcodes_columns.html">Columns</a>
+						</li>
+						<li class="sfish-navgiation-item last">
+							<a href="shortcodes_tabs.html">Tabs and Accordions</a>
+						</li>
+					</ul>	-->
+				</li>
+				<!--<li class="nav-item"><a href="#">Portfolio</a>
+					<ul>
+						<li class="sfish-navgiation-item">
+							<a href="portfolio_2columns.html">Two Columns Layout</a>
+						</li>
+						<li class="sfish-navgiation-item">
+							<a href="portfolio_3columns.html">Three Columns Layout</a>
+						</li>
+						<li class="sfish-navgiation-item last">
+							<a href="portfolio_4columns.html">Four Columns Layout</a>
+						</li>
+					</ul>
+				</li>
+				<li class="nav-item"><a href="#">Pages</a>
+					<ul>
+						<li class="sfish-navgiation-item">
+							<a href="price_compare.html">Price Compare Table</a>
+						</li>
+						<li class="sfish-navgiation-item">
+							<a href="faq.html">FAQ</a>
+						</li>
+						<li class="sfish-navgiation-item">
+							<a href="awards.html">Quotes and Awards</a>
+						</li>
+						<li class="sfish-navgiation-item">
+							<a href="right_sidebar.html">Right Sidebar</a>
+						</li>
+						<li class="sfish-navgiation-item more-levels">
+							<a href="#">Empty - showing 3rd level menu</a>
+							<ul>
+								<li><a href="#">Third Level Item</a></li>
+								<li><a href="#">Third Level Item</a></li>
+								<li><a href="#">Third Level Item</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>-->
+				<li class="nav-item"><a href="contacts.html">Contatos</a></li>
+				<!--<li class="nav-item"><a href="#" target="_blank">Buy this theme</a></li>-->
+			</ul>
+			<!-- Navigation Content End -->
+			
+			<!-- Megamenu Begin -->
+			
+			<!-- Megamenu End -->
+				
+			</div>
+			<div class="navigation-shadow"></div>
+		</div>
+		<!-- Navigation End -->
+
+		<br class="clear"/>
+		
+		<!-- Main Content Begin -->
+		<div class="main-content float-right">
+			<div class="main-content-inner">
+			
+				<!-- Breadcrumbs Begin -->
+				<div class="general-block-outer">
+					<div class="general-block breadcrumbs">
+						<ul class="breadcrumbs">
+							<li class="home"><a href="#"><img src="../images/brown/breadcrumbs_home.png" border="0"/></a></li>
+							<li><a href="grid.html">Online Store</a></li>
+							<li class="active">Product Details</li>
+						</ul>
+						<br class="clear"/>
+					</div>
+				</div>
+				<!-- Breadcrumbs End -->
+				
+				<!-- Details Begin -->
+				
+				<div class="details-product-gallery float-left">
+					
+					<div class="general-block-outer details-product-image float-left">
+						<div class="general-block">
+							<div id="exposure"></div>
+						</div>
+					</div>
+					<div class="panel">	
+						<div id="controls"></div>				
+						<div id="slideshow"></div>
+						<ul id="images">
+							<li><a href="../images/pr1.jpg"><img src="../images/slide_small1.jpg" title="Home made" /></a></li>
+							<li><a href="../images/pr2.jpg"><img src="../images/slide_small2.jpg" title="Chocolate" /></a></li>
+							<li><a href="../images/pr3.jpg"><img src="../images/slide_small3.jpg" title="Love birds" /></a></li>
+							<li><a href="../images/pr4.jpg"><img src="../images/slide_small4.jpg" title="Blue" /></a></li>
+						</ul>
+					</div>
+				
+				</div>
+				
+					<h3>Nullam eu sapien ipsum lacus</h3>
+					<div class="price">$34.50</div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id rutrum orci. Donec vel turpis orci, id conditum est. Nunc nec felis non est dictum ultrices. Phasellus pulvinar erat, a magna accumsan vitae. Sed egestas dolor sed quam facilisis sed molestie fringilla.</p>
+					<p class="meta">Category: <a href="#" class="regular">Beauty</a>, <a href="#" class="regular">Fashion</a></p>
+					<div class="styled-select general-field details-options">
+						<select class="styled options">
+							<option>Select Size...</option>
+							<option>Small</option>
+							<option>Medium</option>
+							<option>Large</option>
+						</select>
+					</div>
+					
+					<div class="styled-select general-field details-options">
+						<select class="styled options">
+							<option>Select Color...</option>
+							<option>Red</option>
+							<option>Blue</option>
+							<option>Green</option>
+						</select>
+					</div>
+					<div class="quantity-container">
+						<div class="float-left general-field quantity">
+							<input type="text" class="general-input" value="1" id="#" name="#" size="6"/>
+						</div>
+						<div class="float-left">
+							<a class="red-button" href="#">Add to Cart</a>
+						</div>
+						<br class="clear"/>
+					</div>
+					
+					<!-- Google Begin -->
+					
+						
+                                        
+
+						<script type="text/javascript">
+						  (function() {
+							var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+							po.src = '../../../apis.google.com/js/plusone.js';
+							var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+						  })();
+						</script>
+					
+					<!-- Google End -->
+					
+					<!-- Twitter Begin -->
+					<div class="social-container float-left">
+						<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="../../../platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					</div>
+					<!-- Twitter End -->
+					
+					<!-- Facebook Begin -->
+					<div class="social-container float-left">
+						<div id="fb-root"></div>
+						<script>(function(d, s, id) {
+						  var js, fjs = d.getElementsByTagName(s)[0];
+						  if (d.getElementById(id)) return;
+						  js = d.createElement(s); js.id = id;
+						  js.src = "../../../connect.facebook.net/en_US/all.js#xfbml=1";
+						  fjs.parentNode.insertBefore(js, fjs);
+						}(document, 'script', 'facebook-jssdk'));</script>
+						<div class="fb-like" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false"></div>
+					</div>
+					<!-- Facebook End -->
+					
+				
+				
+				<br class="clear"/>
+				
+				<!-- Tabs Begins -->
+				<div class="tabs-product">
+					<ul>
+						<li><a href="#tabs-1">Description</a></li>
+						<li><a href="#tabs-2">Additional info</a></li>
+						<li><a href="#tabs-3">Comments</a></li>
+					</ul>
+					<div id="tabs-1">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id rutrum orci. Donec vel turpis orci, id condimentum est. Nunc nec felis non est dictum ultrices. Nam semper gravida auctor. Aenean non dolor at lorem viverra fringilla varius vitae nisi. Ut ornare sollicitudin leo, et rhoncus turpis volutpat vel. Nullam ac nunc in ipsum pellentesque facilisis id at justo.</p>
+
+						<p>Aliquam ac libero elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla metus libero, rhoncus nec mattis ac, ullamcorper interdum elit. Nullam id congue est. Nam diam dui, accumsan quis pretium et, facilisis ut leo. Sed orci diam, dictum ut aliquet eget, sodales in massa.</p>
+						
+						<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam rhoncus, felis sed aliquam tempus, ipsum sem consequat ligula, vitae mollis nunc diam quis sem. Aliquam ac libero elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla metus libero, rhoncus nec mattis ac, ullamcorper interdum elit.</p>
+						
+						<p>Maecenas id rutrum orci. Donec vel turpis orci, id condimentum est. Nunc nec felis non est dictum ultrices. Nam semper gravida auctor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean non dolor at lorem viverra fringilla varius vitae nisi. Ut ornare sollicitudin leo, et rhoncus turpis volutpat vel. Nullam ac nunc in ipsum pellentesque facilisis id at justo.</p>
+					</div>
+					<div id="tabs-2">
+						<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+					</div>
+					<div id="tabs-3">
+						<!-- Comments Begin -->
+						
+						<div class="general-block-outer comments-avatar">
+							<div class="general-block-list">
+								<img src="../images/avatar.png"/>
+							</div>
+						</div>
+						
+						<div class="general-block-outer comments-text">
+							<div class="general-block">
+								<span class="name">John Smith</span>
+								<span class="time">June 14, 2012 at 7:53 pm</span>
+								<p>Lorem ipsum dolor amet, consecteur adipsing elit. Phasellus efend, enim non euismod lacinia, urna odio convallis urna, eu comodo mi non orci. Nullam eu sapien ipsum, non adipiscing lacus. </p>
+							</div>
+						</div>
+						
+						<br class="clear"/>
+						
+						<div class="general-block-outer comments-avatar">
+							<div class="general-block-list">
+								<img src="../images/avatar.png"/>
+							</div>
+						</div>
+						
+						<div class="general-block-outer comments-text">
+							<div class="general-block">
+								<span class="name">Jane Smith</span>
+								<span class="time">June 07, 2012 at 7:53 pm</span>
+								<p>Lorem ipsum dolor amet, consecteur adipsing elit. Phasellus efend, enim non euismod lacinia, urna odio convallis urna, eu comodo mi non orci. Nullam eu sapien ipsum, non adipiscing lacus. </p>
+							</div>
+						</div>
+						
+						<br class="clear"/>
+						
+						<div class="comments-avatar">
+								<img src="../images/comments_icon.png"/>
+						</div>
+						
+						<div class="general-field comments-text">
+								<textarea class="txtarea-comment" id="message" name="message" cols="20" rows="4"></textarea>
+						</div>
+						
+						<br class="clear"/>
+						
+						<a href="#" class="red-button comments-button">Submit Your Comment</a>
+						
+						<!-- Comments End -->
+					</div>
+				</div>
+				<!-- Tabs End -->
+				
+				<!-- Details End -->
+
+			</div>
+		</div>
+		<!-- Main Content End -->
+		
+		<!-- Left Sidebar Begin -->
+		<div class="sidebar left float-left">
+
+			<!-- Categories Begin -->
+
+			<div class="general-block-outer sidebar-title">
+				<div class="general-block collapsible">
+					<h3>Categories</h3>
+				</div>
+			</div>
+
+			<div class="general-block-outer sidebar-block">
+				<div class="general-block-list">
+					<ul class="categories">
+						<li><a href="grid.html">Lorem ipsum dolor</a></li>
+						<li class="active">Adipiscing lacus</li>
+						<li><a href="grid.html">Maecenas tempus</a></li>
+						<li><a href="grid.html">Nulla vitae</a></li>
+						<li><a href="grid.html">Suspendisse pellentesque</a></li>
+						<li><a href="grid.html">Lorem ipsum tech</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- Categories End -->
+			
+			<!-- Recent Reviews Begin -->
+			<div class="general-block-outer sidebar-title">
+				<div class="general-block collapsible">
+					<h3>Recent Product Reviews</h3>
+				</div>
+			</div>
+			
+			<div class="general-block-outer sidebar-block">
+				<div class="general-block-list">
+					
+					<!-- 1 -->
+					<div class="sidebar-post-single">
+						<div class="sidebar-post-thumb float-left">
+							<a href="blog-single.html"><img src="../images/blog_post_thumbnail1.png" border="0"/></a>
+						</div>
+						<span class="sidebar-post-title"><a href="blog-single.html">Donec luctus dignissim ante nec gravida</a></span>
+						<span class="sidebar-post-date">12 Dec</span>
+						<br class="clear"/>
+					</div>
+					
+					<!-- 2 -->
+					<div class="sidebar-post-single">
+						<div class="sidebar-post-thumb float-left">
+							<a href="blog-single.html"><img src="../images/blog_post_thumbnail2.png" border="0"/></a>
+						</div>
+						<span class="sidebar-post-title"><a href="blog-single.html">Donec luctus dignissim ante nec gravida</a></span>
+						<span class="sidebar-post-date">12 Dec</span>
+						<br class="clear"/>
+					</div>
+					
+					<!-- 3 -->
+					<div class="sidebar-post-single">
+						<div class="sidebar-post-thumb float-left">
+							<a href="blog-single.html"><img src="../images/blog_post_thumbnail3.png" border="0"/></a>
+						</div>
+						<span class="sidebar-post-title"><a href="blog-single.html">Donec luctus dignissim ante nec gravida</a></span>
+						<span class="sidebar-post-date">12 Dec</span>
+						<br class="clear"/>
+					</div>
+
+				</div>
+			</div>
+			<!-- Recent Reviews End -->
+			
+			<!-- Tag Cloud Begin -->
+			<div class="general-block-outer sidebar-title">
+				<div class="general-block collapsible">
+					<h3>Tag Cloud</h3>
+				</div>
+			</div>
+			
+			<div class="sidebar-block">
+				<ul class="tags">
+					<li><a href="blog.html">design</a></li>
+					<li><a href="blog.html">beauty</a></li>
+					<li><a href="blog.html">UI</a></li>
+					<li><a href="blog.html">luxurious</a></li>
+					<li><a href="blog.html">WordPress</a></li>
+					<li><a href="blog.html">WooCommerce</a></li>
+					<li><a href="blog.html">web design</a></li>
+					<li><a href="blog.html">themeforest</a></li>
+				</ul>
+			</div>
+			<!-- Tag Cloud End -->
+			
+		</div>
+		<!-- Left Sidebar End -->
+		
+		<br class="clear"/>
+
+	</div>
+	
+	<div id="footer">
+		<div id="footer-label">
+			<div class="internal">
+				Need help with your order? Call us.<br/>
+				<span class="number">1 700 123 4567</span>
+			</div>
+		</div>
+		
+		<div class="footer-inner">
+			
+			<div class="one-third float-left">
+				<h1>Social Profiles</h1>
+				<a href="#" class="social">
+					<img src="../images/twitter.png" border="0"/>
+				</a>
+				<a href="#" class="social">
+					<img src="../images/digg.png" border="0"/>
+				</a>
+				<a href="#" class="social">
+					<img src="../images/facebook.png" border="0"/>
+				</a>
+				<a href="#" class="social">
+					<img src="../images/youtube.png" border="0"/>
+				</a>
+				<a href="#" class="social">
+					<img src="../images/google.png" border="0"/>
+				</a>
+				<a href="#" class="social">
+					<img src="../images/vimeo.png" border="0"/>
+				</a>
+				
+				<p>&nbsp;</p>
+				
+				<h1>Newsletter Sign Up</h1>
+				<p>Lorem ipsum dolor amet, consecteur adipsing. Phasellus efend, enim non euismod lacinia, urna odio convallis.</p>
+
+				<p class="newsletter">
+					<input type="text" class="newsletter-field" onblur="if(this.value==''){this.value='Enter your e-mail...'};" onfocus="if(this.value=='Enter your e-mail...'){this.value=''};" value="Enter your e-mail..."/>
+					<input type="submit" class="go-btn" value="Sign Up" id="go"/>
+				</p>
+			</div>
+
+			<div class="one-third float-left">
+				<h1>Text Example</h1>
+				<p>Lorem ipsum dolor amet, consecteur adipsing. Phasellus efend, enim non euismod lacinia, urna odio convallis, Comodo mi non orci. Nullam eu sapien ipsum.</p>
+				<p>Donec luctus dignissim ante nec gravida. Vestibulum sit amet augue leo. Vivamus facilisis 
+sapien eu neque dignissim non vulputate metus facilisis. </p>
+				<p>Phasellus pulvinar erat, a magna 
+accumsan vitae. Donec non erat. Sed egestas dolor sed quam facilisis sed molestie fringilla.</p>
+			</div>
+			
+			<div class="one-third last float-left">
+				<h1>Quick Navigation</h1>
+				<ul>
+					<li><a href="#">Read more about us</a></li>
+					<li><a href="#">Customer support 365/24/7</a></li>
+					<li><a href="#">Shipping information and transport costs</a></li>
+					<li><a href="#">Terms and conditions</a></li>
+					<li><a href="#">Legal notice</a></li>
+					<li><a href="#">Return policy</a></li>
+					<li><a href="#">Frequently asked questions</a></li>
+				</ul>
+			</div>
+			
+			<br class="clear"/>
+			
+		</div>
+		
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	
+	$(function() {
+
+		// Image mouse hover effect
+		$('.circle').mosaic({
+					opacity		:	0.8			//Opacity for overlay (0-1)
+				});
+				
+		$('.fade').mosaic();
+		
+		$('.bar').mosaic({
+			animation	:	'slide'		//fade or slide
+		});
+		
+		
+		$( ".tabs-product" ).tabs({
+			collapsible: true
+		});
+	
+		
+	});
+	
+	$(window).load(function(){
+
+    });
+	
+	$(document).ready(function() {
+		
+		// Exposure product image gallery
+		$(function(){
+				var gallery = $('#images');
+				gallery.exposure({controlsTarget : '#controls',
+					imageControls : false,
+					controls : { prevNext : false, pageNumbers : false, firstLast : false },
+					pageSize : 5,
+					enableSlideshow: false,
+					showCaptions: false,
+					slideshowControlsTarget : '#slideshow',
+					onThumb : function(thumb) {
+						var li = thumb.parents('li');				
+						var fadeTo = li.hasClass($.exposure.activeThumbClass) ? 1 : 0.7;
+						
+						thumb.css({display : 'none', opacity : fadeTo}).stop().fadeIn(200);
+						
+						thumb.hover(function() { 
+							thumb.fadeTo('fast',1); 
+						}, function() { 
+							li.not('.' + $.exposure.activeThumbClass).children('img').fadeTo('fast', 0.7); 
+						});
+					},
+					onImageHoverOver : function() {
+						if (gallery.imageHasData()) {						
+							// Show image data as an overlay when image is hovered.
+							gallery.dataElement.stop().show().animate({bottom:0+'px'},{queue:false,duration:160});
+						}
+					},
+					onImageHoverOut : function() {
+						// Slide down the image data.
+						var imageDataBottom = -gallery.dataElement.outerHeight();
+						gallery.dataElement.stop().show().animate({bottom:imageDataBottom+'px'},{queue:false,duration:160});
+					},
+					onImage : function(image, imageData, thumb) {
+						var w = gallery.wrapper;
+						
+						// Fade out the previous image.
+						image.siblings('.' + $.exposure.lastImageClass).stop().fadeOut(500, function() {
+							$(this).remove();
+						});
+						
+						// Fade in the current image.
+						image.hide().stop().fadeIn(500);
+						
+						// Setup hovering for the image data container.
+						imageData.hover(function() {
+							// Trigger mouse enter event for wrapper element.
+							w.trigger('mouseenter');
+						}, function() {
+							// Trigger mouse leave event for wrapper element.
+							w.trigger('mouseleave');
+						});
+						
+						// Check if wrapper is hovered.
+						var hovered = w.hasClass($.exposure.imageHoverClass);						
+						if (hovered) {
+							if (gallery.imageHasData()) {
+								gallery.onImageHoverOver();
+							} else {
+								gallery.onImageHoverOut();
+							}	
+						}
+		
+						if (gallery.showThumbs === thumb === thumb.length) {
+							thumb.parents('li').siblings().children('img.' + $.exposure.selectedImageClass).stop().fadeTo(200, 0.7, function() { $(this).removeClass($.exposure.selectedImageClass); });			
+							thumb.fadeTo('fast', 1).addClass($.exposure.selectedImageClass);
+						}
+					}
+				});
+			});
+		// Exposure end
+		
+		$('#main-menu').mobileMenu();
+		
+		// Collapsible menu
+		//jQuery(".sidebar-block").hide();
+		//toggle the componenet with class msg_body
+		jQuery(".sidebar-title").click(function() {
+			jQuery(this).find(".collapsible").toggleClass("closed");
+			jQuery(this).next(".sidebar-block").slideToggle(500);
+	  });
+
+		// Navigation menu
+		$('ul.sf-menu').superfish({ 
+			hoverClass:    'sfHover', 
+			delay: 100
+		});  
+		
+		// Mouseover effect for thumbnails
+		$("a.grouped-elements").hover(function() {
+			  $(this).find(".imagehover").toggleClass("mouseon");
+		});
+		
+	});
+	
+</script>
+
+</body>
+</html>

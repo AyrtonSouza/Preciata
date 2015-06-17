@@ -1,0 +1,70 @@
+<ui:composition template="/WEB-INF/template/layoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:define name="Cadastro de Produtos"></ui:define>
+	
+	<ui:define name="corpo">
+		 <h:form>
+            <p:panel header="Cadastro de Produtos" >
+
+                <p:messages>
+                </p:messages>
+
+                <p:panelGrid columns="6" >
+
+                    <p:outputLabel value="Nome:" for="nome" />
+                    <p:inputText id="nome" value="#{produtoBean.produto.prodNome}" required="true"/>
+
+                    <p:outputLabel value="Valor:" for="valor" />
+                    <p:inputText id="valor" value="#{produtoBean.produto.prodPreco}" required="true" />
+
+                    <p:outputLabel value="Quantidade:" for="quantidade" />
+                    <p:inputText id="quantidade" value="#{produtoBean.produto.prodQuantidade}" required="true" />
+
+                    <p:outputLabel value="Descricao:" for="descricao" />
+                    <p:inputText id="descricao" value="#{produtoBean.produto.prodDescricao}" required="true" />
+                    
+                    <p:outputLabel value="Categoria:"></p:outputLabel>
+                    <p:selectOneMenu id="categoria"
+                                     value="#{produtoBean.categoriaid}">
+                        <p:ajax listener="#{produtoBean.onCategoria()}" update="subcategoria" />
+                        <f:selectItem itemLabel="Selecione" itemValue=""
+                                      noSelectionOption="true" />
+                        <f:selectItems value="#{categoriaBean.categorias}" var="categoria" 
+                                       itemLabel="#{categoria.catNome}" itemValue="#{categoria.catId}" />
+                    </p:selectOneMenu>
+                    
+                    <p:outputLabel value="SubCategoria"></p:outputLabel>
+                    <p:selectOneMenu id="subcategoria" value="#{produtoBean.produto.fkSubCatId}">
+                        <p:ajax listener="#{produtoBean.onCategoria()}" update="categoria" />
+				<f:selectItem itemLabel="Selecione" itemValue=""
+					noSelectionOption="true" />
+                                <f:selectItems value="#{produtoBean.subcategorias}" var="subs"
+                                               itemLabel="#{subs.subNome}" itemValue="#{subs.subId}" />
+                    </p:selectOneMenu>
+                    
+                    
+
+                </p:panelGrid>
+                <br />
+                <input type="hidden" value="#{produtoBean.produto.prodId}" name="prodId"/>
+                <p:commandButton 
+                    value="Salvar" title="Salvar produto"
+                    action="#{produtoBean.salvar()}" update="@form" >
+                </p:commandButton>
+                
+                <p:commandButton 
+                    value="Voltar" title="Voltar"
+                    action="#{produtoBean.salvar()}" update="@form" >
+                </p:commandButton>
+            </p:panel>
+
+           
+        </h:form>
+	</ui:define>
+	
+</ui:composition>
